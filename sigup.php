@@ -6,7 +6,7 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
 
-<?load_template('_head');?>
+<?load_template('_head'); //print_r($_SERVER);?>
 
 <body>
 
@@ -92,7 +92,7 @@
 
         <section class="py-5 text-center container">
             <?php 
-            load_template('_login');
+            load_template('_sigup');
             ?>
         </section>
 
