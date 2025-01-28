@@ -18,7 +18,7 @@ function signup($user,$phone,$email_address,$pass){
     $servername = $db_server;
 $username = $db_username;
 $password = $db_password;
-$dbname = $anandnb_nb;//1:21:04
+$dbname = $db_name;//1:21:04
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
