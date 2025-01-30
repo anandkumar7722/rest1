@@ -1,48 +1,43 @@
 <?php
 
-function load_template($name){
-    //print(__FILE__);
-    //include __DIR__."/../_template/$name.php";
-    include $_SERVER['DOCUMENT_ROOT']."/app/_template/$name.php";
-    
+function load_template($name)
+{
+    include $_SERVER['DOCUMENT_ROOT']."/app/_template/$name.php"; //not consistant.
 }
-function validate_credentials($username,$password){
-    
-    if($username=="Anand123@gmail.com" and $password=="password"){
+
+function validate_credentials($username, $password)
+{
+    if ($username == "sibi@selfmade.ninja" and $password == "password") {
         return true;
-    }else{
+    } else {
         return false;
     }
 }
-function signup($user,$phone,$email_address,$pass){
-    $servername = $db_server;
-$username = $db_username;
-$password = $db_password;
-$dbname = $db_name;//1:21:04
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}else{
-    print("<br>connection estimation");
-}
+function signup($user, $pass, $email, $phone)
+{
+    $servername = $db_serve;
+    $username = $db_username;
+    $password = $db_password;
+    $dbname = $db_name;
 
-$sql = "INSERT INTO `auth` (`username`, `password`, `email`, `phone`, `blocked`, `active`)
-VALUES ('$user', '$pass', '$email_address', '$phone', '0', '1');";
-//$result=false;
-if ($conn->query($sql) === TRUE) {
-  echo "\n<br>New record created successfully";
-  $result=true;
-} else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
-  $result=false;
-  print($conn->error);
-  
-}
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
 
-$conn->close();
-return $result;
+    $sql = "INSERT INTO `auth` (`username`, `password`, `email`, `phone`, `active`)
+    VALUES ('$user', '$pass', '$email', '$phone', '1');";
+    $error = false;
+    if ($conn->query($sql) === true) {
+        $error = false;
+    } else {
+        // echo "Error: " . $sql . "<br>" . $conn->error;
+        $error = $conn->error;
+    }
+
+    $conn->close();
+    return $error;
 }
-?>

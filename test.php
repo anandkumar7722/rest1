@@ -17,11 +17,13 @@
     //print("session");
     //print_r($_SESSION);
     */
+    print("_POST \n");
+    print_r($_POST);
     if(signup("anand1d","198765","email@gaivl.comm","password")){
-        echo "<br>\nsuccess";
+        echo "success";
     }
     else{
-        echo "<br>\nlater success";
+        echo"later success";
     }
     
     ?>
