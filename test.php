@@ -17,7 +17,7 @@
     //print("session");
     //print_r($_SESSION);
     */
-    print("_POST \n");
+   /* print("_POST \n");
     print_r($_POST);
     if(signup("anand1d","198765","email@gaivl.comm","password")){
         echo "success";
@@ -25,6 +25,20 @@
     else{
         echo"later success";
     }
-    
+    */
+    $mic = new Mic("audio");//constructing the object
+    $mic1 = new Mic("hyper audio");
+    // $mic->brand="audio\n";
+    // $mic1->brand="audio2\n";
+   // printf($mic1->brand);
+   // printf($mic->brand);
+    $mic1->Light="Rgb\n";
+    //echo $mic1->Light;
+    $mic1->setLight("white\n");//=$mic1->Light="white";
+    echo $mic1->Light;
+    $mic1->setModel("xt2003");
+    echo "mic\n".$mic1->getModel();
+    print("\n ".$mic->getbrand());
+    print("\n ".$mic1->getbrand());
     ?>
 </pre>
