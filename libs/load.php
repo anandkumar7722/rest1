@@ -1,5 +1,8 @@
 <?php
+
 include_once 'includes/Mic.class.php';
+include_once 'includes/User.class.php';
+include_once 'includes/Database.class.php';
 
 function load_template($name)
 {
@@ -14,31 +17,4 @@ function validate_credentials($username, $password)
         return false;
     }
 }
-
-function signup($user, $pass, $email, $phone)
-{
-    $servername = $db_serve;
-    $username = $db_username;
-    $password = $db_password;
-    $dbname = $db_name;
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    $sql = "INSERT INTO `auth` (`username`, `password`, `email`, `phone`, `active`)
-    VALUES ('$user', '$pass', '$email', '$phone', '1');";
-    $error = false;
-    if ($conn->query($sql) === true) {
-        $error = false;
-    } else {
-        // echo "Error: " . $sql . "<br>" . $conn->error;
-        $error = $conn->error;
-    }
-
-    $conn->close();
-    return $error;
-}
+?>

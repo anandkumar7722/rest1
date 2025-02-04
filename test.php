@@ -26,12 +26,12 @@
         echo"later success";
     }
     */
-    $mic = new Mic("audio");//constructing the object
+    /*$mic = new Mic("audio");//constructing the object
     $mic1 = new Mic("hyper audio");
-    // $mic->brand="audio\n";
-    // $mic1->brand="audio2\n";
-   // printf($mic1->brand);
-   // printf($mic->brand);
+    $mic->brand="audio\n";
+    $mic1->brand="audio2\n";
+   printf($mic1->brand);
+   printf($mic->brand);
     $mic1->Light="Rgb\n";
     //echo $mic1->Light;
     $mic1->setLight("white\n");//=$mic1->Light="white";
@@ -40,5 +40,11 @@
     echo "mic\n".$mic1->getModel();
     print("\n ".$mic->getbrand());
     print("\n ".$mic1->getbrand());
+    */
+    
+    print("_POST \n");
+    print_r($_POST);
     ?>
+    
+
 </pre>

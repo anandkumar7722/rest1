@@ -3,10 +3,10 @@ $signup=false;
 if(isset($_POST['username']) and isset($_POST['password']) and isset($_POST['email_adders'] ) and isset($_POST['phone']))
 {
     $username=$_POST['username'];
-    $password=$_POST['password'];
+    $pass=$_POST['password'];
     $email=$_POST['email_adders'];
     $phone=$_POST['phone'];
-    $result=signup($username,$password,$email,$phone);
+    $result=User::signup($username,$pass,$email,$phone);
     $signup=true;
 }
 ?>
