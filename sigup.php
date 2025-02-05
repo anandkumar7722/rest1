@@ -1,12 +1,13 @@
 <?php
-    include 'libs/load.php';
-      
-      
+include 'libs/load.php';
+
+
 ?>
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
 
-<?load_template('_head'); //print_r($_SERVER);?>
+<? load_template('_head'); //print_r($_SERVER);
+?>
 
 <body>
 
@@ -81,27 +82,27 @@
 
 
 
-    <?load_template("_header");
-         
-            
-      ?>
+    <? load_template("_header");
+
+
+    ?>
 
 
 
     <main>
 
         <section class="py-5 text-center container">
-            <?php 
+            <?php
             load_template('_sigup');
             ?>
         </section>
 
 
 
-        <?//load_template('_photogram');
+        <? //load_template('_photogram');
         ?>
     </main>
-    <?load_template('_footer');?>
+    <? load_template('_footer'); ?>
 
     <script src="/app/assets/dist/js/bootstrap.bundle.min.js"></script>
 

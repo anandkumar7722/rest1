@@ -3,10 +3,12 @@
 include_once 'includes/Mic.class.php';
 include_once 'includes/User.class.php';
 include_once 'includes/Database.class.php';
+include_once 'includes/Session.class.php';
+Session::start();
 
 function load_template($name)
 {
-    include $_SERVER['DOCUMENT_ROOT']."/app/_template/$name.php"; //not consistant.
+    include $_SERVER['DOCUMENT_ROOT'] . "/app/_template/$name.php"; //not consistant.
 }
 
 function validate_credentials($username, $password)
@@ -17,4 +19,3 @@ function validate_credentials($username, $password)
         return false;
     }
 }
-?>

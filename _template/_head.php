@@ -15,10 +15,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
     <link href="/app/assets/dist/css/bootstrap.min.css" rel="stylesheet">
-    <?//print($_SERVER['DOCUMENT_ROOT'])?>
-    <?if(file_exists($_SERVER['DOCUMENT_ROOT'].'/app/css/'.basename($_SERVER['PHP_SELF'], ".php").".css")){?>
-    <link href="/app/css/<?=basename($_SERVER['PHP_SELF'],".php")?>.css" rel="stylesheet">
-    <?}?>
+    <? //print($_SERVER['DOCUMENT_ROOT'])
+    ?>
+    <? if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/app/css/' . basename($_SERVER['PHP_SELF'], ".php") . ".css")) { ?>
+        <link href="/app/css/<?= basename($_SERVER['PHP_SELF'], ".php") ?>.css" rel="stylesheet">
+    <? } ?>
 
 
 

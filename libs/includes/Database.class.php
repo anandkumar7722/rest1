@@ -6,18 +6,18 @@ class Database
     public static function getConnection()
     {
         if (Database::$conn == null) {
-            $servername = db_server;
-            $username = db_username;
-            $password = db_password;
-            $dbname = db_name;
-        
+            $servername = $db_server;
+            $username = $db_username;
+            $password =$db_password ;
+            $dbname = $db_name;
+
             // Create connection
             $connection = new mysqli($servername, $username, $password, $dbname);
             // Check connection
             if ($connection->connect_error) {
                 die("Connection failed: " . $connection->connect_error); //TODO: Replace this with exception handling
             } else {
-               // printf("New connection establishing...");
+                // printf("New connection establishing...");
                 Database::$conn = $connection; //replacing null with actual connection
                 return Database::$conn;
             }

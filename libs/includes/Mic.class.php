@@ -2,8 +2,9 @@
 //public
 //private
 //protected
-class Mic{
- 
+class Mic
+{
+
     private $brand;
     public $color;
     public $usb_port;
@@ -12,23 +13,27 @@ class Mic{
     public string $Light;
     public string $model;
 
-    public function __construct($brand){
+    public function __construct($brand)
+    {
         printf("object created");
-        $this->brand=ucwords($brand);
+        $this->brand = ucwords($brand);
     }
-    public function getbrand(){
+    public function getbrand()
+    {
         return $this->brand;
     }
 
-    public function setLight($Light){
+    public function setLight($Light)
+    {
 
-      $this->Light=$Light;
+        $this->Light = $Light;
     }
-    public function getModel(){
+    public function getModel()
+    {
         return $this->model;
     }
-    public function setModel($model){
-        $this->model=ucwords($model);
+    public function setModel($model)
+    {
+        $this->model = ucwords($model);
     }
-
 }

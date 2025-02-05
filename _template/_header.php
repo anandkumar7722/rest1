@@ -1,4 +1,5 @@
-<?//print_r($_SERVER); ?>
+<? //print_r($_SERVER); 
+?>
 <header data-bs-theme="dark">
     <div class="collapse text-bg-dark" id="navbarHeader">
         <div class="container">

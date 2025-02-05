@@ -1,8 +1,8 @@
 <pre>
     <?php
     include 'libs/load.php';
-   // $cookie_name = "user";
-   // $cookie_value = $_SERVER['REQUEST_URI'];
+    // $cookie_name = "user";
+    // $cookie_value = $_SERVER['REQUEST_URI'];
     //setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
     /*print("_SERVER \n");
     print_r($_SERVER);
@@ -17,7 +17,7 @@
     //print("session");
     //print_r($_SESSION);
     */
-   /* print("_POST \n");
+    /* print("_POST \n");
     print_r($_POST);
     if(signup("anand1d","198765","email@gaivl.comm","password")){
         echo "success";
@@ -41,7 +41,7 @@
     print("\n ".$mic->getbrand());
     print("\n ".$mic1->getbrand());
     */
-    
+
     print("_POST \n");
     print_r($_POST);
     ?>
