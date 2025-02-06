@@ -6,10 +6,10 @@ class Database
     public static function getConnection()
     {
         if (Database::$conn == null) {
-            $servername = $db_server;
-            $username = $db_username;
-            $password =$db_password ;
-            $dbname = $db_name;
+            $servername = "mysql.selfmade.ninja";
+            $username = "anandnb";
+            $password ="plmoknij";
+            $dbname = "anandnb_nb";
 
             // Create connection
             $connection = new mysqli($servername, $username, $password, $dbname);
