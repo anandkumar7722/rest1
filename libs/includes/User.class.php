@@ -12,6 +12,7 @@ class User
         if ($conn->query($sql) === true) {
             $error = false;
         } else {
+            //printf("new connecting estimation");
             // echo "Error: " . $sql . "<br>" . $conn->error;
             $error = $conn->error;
         }
@@ -19,13 +20,28 @@ class User
         // $conn->close();
         return $error;
     }
-    public function login($user,$pass){
-
-    }
+    public static function login($user,$pass){
+        $pass=md5(strrev(md5($pass)));
+        $query="SELECT * FROM `auth` WHERE `username` = '$user'";
+        $conn=Database::getConnection();
+        $result=$conn->query($query);
+        if($result->num_rows == 1){
+            $row=$result->fetch_assoc();
+            //return $row;
+            if($row['password']==$pass){
+                return $row;
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
+        
+        }
     public function __construct($username)
     {
         $this->conn=Database::getConnection();
-        //$this->conn=query();
+         $this->conn->query();
     }
     public function authenticate(){
 
