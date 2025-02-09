@@ -6,7 +6,7 @@ class Database
     public static function getConnection()
     {
         if (Database::$conn == null) {
-            $servername = db_server;
+            $servername =db_server;
             $username = db_username;
             $password =db_password;
             $dbname = db_name;

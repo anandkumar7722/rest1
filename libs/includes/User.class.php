@@ -2,9 +2,15 @@
 
 class User
 {
+    private $conn;
+    //private static $salt="plmokjn";
     public static function signup($user, $pass, $email, $phone)
     {
-        $pass=md5(strrev(md5($pass)));// security throught obsecurity
+        $options = [
+            'cost' => 7,//7 to 10
+        ];
+        $pass = password_hash($pass, PASSWORD_BCRYPT, $options);
+        //$pass=md5(strrev(md5($pass)).User::$salt);// security throught obsecurity
         $conn = Database::getConnection();
         $sql = "INSERT INTO `auth` (`username`, `password`, `email`, `phone`, `active`)
         VALUES ('$user', '$pass', '$email', '$phone', '1');";
@@ -21,14 +27,15 @@ class User
         return $error;
     }
     public static function login($user,$pass){
-        $pass=md5(strrev(md5($pass)));
+        //$pass=md5(strrev(md5($pass)).User::$salt);
         $query="SELECT * FROM `auth` WHERE `username` = '$user'";
         $conn=Database::getConnection();
         $result=$conn->query($query);
         if($result->num_rows == 1){
             $row=$result->fetch_assoc();
             //return $row;
-            if($row['password']==$pass){
+            //if($row['password']==$pass){
+            if(password_verify($pass,$row['password'])){
                 return $row;
             }else{
                 return false;

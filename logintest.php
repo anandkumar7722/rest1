@@ -2,7 +2,7 @@
 include 'libs/load.php';
 
 $user = "fooboo";
-$pass = "plmoknij";
+$pass = isset($_GET['pass']) ? $_GET['pass'] : '';
 $result = null;
 
 if (isset($_GET['logout'])) {
