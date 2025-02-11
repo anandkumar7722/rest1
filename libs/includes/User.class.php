@@ -48,7 +48,8 @@ class User
     public function __construct($username)
     {
         $this->conn=Database::getConnection();
-         $this->conn->query();
+        $this->conn->query();
+        //$this->$user = $username;
     }
     public function authenticate(){
 
