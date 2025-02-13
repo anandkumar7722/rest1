@@ -41,9 +41,15 @@
     print("\n ".$mic->getbrand());
     print("\n ".$mic1->getbrand());
     */
-
-    print("_POST \n");
-    print_r($_POST);
+global $__site_config;
+//Note: Change this path if you run this code outside lab.
+$__site_config = file_get_contents(__DIR__.'./../photogramconfig.json');
+//Session::start();
+print("server".$_SERVER['DOCUMENT_ROOT'].'/../../photogramconfig.json');
+print("----------------------");
+print("dir".__DIR__.'/../../photogramconfig.json');
+    //print("_POST \n");
+    //print_r($_POST);
     ?>
     
 

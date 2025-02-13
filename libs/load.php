@@ -7,7 +7,9 @@ include_once 'includes/Session.class.php';
 
 global $__site_config;
 //Note: Change this path if you run this code outside lab.
-$__site_config = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/../photogramconfig.json');
+//print __DIR__.'/../../../photogramcofig.json';
+$__site_config = $__site_config = file_get_contents(__DIR__.'/../../../photogramcofig.json');
+
 Session::start();
 
 function get_config($key, $default=null)

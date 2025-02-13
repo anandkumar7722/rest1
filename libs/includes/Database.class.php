@@ -3,10 +3,11 @@
 class Database
 {
     public static $conn = null;
+    //public $username;
     public static function getConnection()
     {
         if (Database::$conn == null) {
-            $servername = get_config('db_server');
+            $servername =get_config('db_server');
             $username = get_config('db_username');
             $password = get_config('db_password');
             $dbname = get_config('db_name');

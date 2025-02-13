@@ -5,8 +5,8 @@ require_once "Database.class.php";
 class User
 {
     private $conn;
-    private $id;
-    public static $username; 
+    public $id;
+    //public $username; 
     public static function signup($user, $pass, $email, $phone)
     {
         $options = [
