@@ -41,15 +41,20 @@
     print("\n ".$mic->getbrand());
     print("\n ".$mic1->getbrand());
     */
-global $__site_config;
+//global $__site_config;
 //Note: Change this path if you run this code outside lab.
-$__site_config = file_get_contents(__DIR__.'./../photogramconfig.json');
+//$__site_config = file_get_contents(__DIR__.'./../photogramconfig.json');
 //Session::start();
-print("server".$_SERVER['DOCUMENT_ROOT'].'/../../photogramconfig.json');
-print("----------------------");
-print("dir".__DIR__.'/../../photogramconfig.json');
+//print("server".$_SERVER['DOCUMENT_ROOT'].'/../../photogramconfig.json');
+//print("----------------------");
+//print("dir".__DIR__.'/../../photogramconfig.json');
     //print("_POST \n");
     //print_r($_POST);
+    $mic = new Mic("audio");
+    $mic1 = new Mic("hyper audio");
+    print($mic1->setMuodel("xt2003"));
+    //print($pass);
+    
     ?>
     
 

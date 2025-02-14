@@ -12,6 +12,14 @@ class Mic
     public $price;
     public string $Light;
     public string $model;
+    
+    public function __call($name, $arguments)
+    {
+        print("\n calling:$name\n");
+        print_r( $arguments);
+        print("\n");
+        
+    }
 
     public function __construct($brand)
     {
