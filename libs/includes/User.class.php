@@ -5,7 +5,6 @@ require_once "Database.class.php";
 class User
 {
     private $conn;
-    
 
     public function __call($name, $arguments)
     {
@@ -15,6 +14,8 @@ class User
             return $this->_get_data($property);
         } elseif (substr($name, 0, 3) == "set") {
             return $this->_set_data($property, $arguments[0]);
+        } else {
+            throw new Exception("User::__call() -> $name, function unavailable.");
         }
     }
     
@@ -48,6 +49,11 @@ class User
             $row = $result->fetch_assoc();
             //if ($row['password'] == $pass) {
             if (password_verify($pass, $row['password'])) {
+                /*
+                1. Generate Session Token
+                2. Insert Session Token
+                3. Build session and give session to user.
+                */
                 return $row['username'];
             } else {
                 return false;
@@ -57,6 +63,7 @@ class User
         }
     }
 
+    //User object can be constructed with both UserID and Username.
     public function __construct($username)
     {
         //TODO: Write the code to fetch user data from Database for the given username. If username is not present, throw Exception.
@@ -64,6 +71,7 @@ class User
         $this->username = $username;
         $this->id = null;
         $sql = "SELECT `id` FROM `auth` WHERE `username`= '$username' LIMIT 1";
+        $sql = "SELECT `id` FROM `auth` WHERE `username`= '$username' OR `id` = '$username' LIMIT 1";
         $result = $this->conn->query($sql);
         if ($result->num_rows) {
             $row = $result->fetch_assoc();
