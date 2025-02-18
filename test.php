@@ -54,6 +54,9 @@
     $mic1 = new Mic("hyper audio");
     print($mic1->setMuodel("xt2003"));
     //print($pass);
+    printf("https://fmovies.net.pk/home/");
+    print("https://hdtoday-hd.today/");
+    printf("https://alternativeto.net/");
     
     ?>
     
