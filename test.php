@@ -57,6 +57,15 @@
     printf("https://fmovies.net.pk/home/");
     print("https://hdtoday-hd.today/");
     printf("https://alternativeto.net/");
+    print_r($_SERVER);
+    print("_GET \n");
+    print_r($_GET);
+    print("_POST \n");
+    print_r($_POST);
+    print("file");
+    print_r($_FILES);
+    print("cookie");
+    print_r($_COOKIE);
     
     ?>
     
