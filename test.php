@@ -57,6 +57,9 @@
     printf("https://fmovies.net.pk/home/");
     print("https://hdtoday-hd.today/");
     printf("https://alternativeto.net/");
+    printf("https://nicepage.com/html-templates");
+    printf("https://themeforest.net/category/site-templates");
+    print("https://html5up.net/");
     print_r($_SERVER);
     print("_GET \n");
     print_r($_GET);
