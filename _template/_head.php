@@ -14,12 +14,16 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
-    <link href="/photogram/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?=get_config('base_path')?>assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="/photogram/assets/dist/css/bootstrap.min.css" rel="stylesheet">-->
     <? //print($_SERVER['DOCUMENT_ROOT'])
     ?>
-    <? if (file_exists($_SERVER['DOCUMENT_ROOT'] . '/photogram/css/' . basename($_SERVER['PHP_SELF'], ".php") . ".css")) { ?>
-    <link href="/photogram/css/<?= basename($_SERVER['PHP_SELF'], ".php") ?>.css" rel="stylesheet">
+
+    <? if (file_exists($_SERVER['DOCUMENT_ROOT'] .get_config('base_path').'css/' . basename($_SERVER['PHP_SELF'], ".php") . ".css")) { ?>
+    <link href="<?=get_config('base_path')?>css/<?= basename($_SERVER['PHP_SELF'], ".php") ?>.css" rel="stylesheet">
     <? } ?>
+
+
 
 
 
