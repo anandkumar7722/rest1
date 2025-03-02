@@ -69,8 +69,28 @@
     print_r($_FILES);
     print("cookie");
     print_r($_COOKIE);
-    
     ?>
+    <?php
+echo $_SERVER['DOCUMENT_ROOT'] . '/../photogramconfig.json';
+//print($_SERVER['DOCUMENT_ROOT'] .'/../../../photogramcofig.json');
+//print(__DIR__.'/../../../photogramcofig.json');
+echo $_SERVER['DOCUMENT_ROOT'].'/../photogramconfig.json';
+
+?>
+___________________________________
+<?php
+$__site_config_path = dirname(is_link($_SERVER['DOCUMENT_ROOT']) ? readlink($_SERVER['DOCUMENT_ROOT']) : $_SERVER['DOCUMENT_ROOT']).'/photogramconfig.json';
+echo "Config Path: " . $__site_config_path . "\n";
+
+$__site_config = file_get_contents($__site_config_path);
+echo "Config Content: " . $__site_config;
+//$__site_config = file_get_contents($__site_config_path);
+//$__site_config = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/photogramconfig.json');
+//$__base_path = get_config('base_path');
+//$__site_config = file_get_contents($_SERVER['DOCUMENT_ROOT'] . "/photogramconfig.json");
+//print __DIR__.'/../../../photogramcofig.json';
+//$__site_config = $__site_config = file_get_contents(__DIR__.'/../../../photogramcofig.json');
+?>
     
 
 </pre>
