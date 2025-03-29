@@ -49,7 +49,7 @@ CREATE TABLE `auth` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 INSERT INTO `auth` (`id`, `username`, `password`, `email`, `phone`, `blocked`, `active`, `sec_email`) VALUES
-(1,	'admin',	'admin',	'admin123@gmail.com',	'9842989458',	0,	1,	NULL);
+(1,	'admin',	'admin',	'admin123@gmail.com',	'9742469448',	0,	1,	NULL);
 
 CREATE TABLE `session` (
   `id` int NOT NULL AUTO_INCREMENT,
