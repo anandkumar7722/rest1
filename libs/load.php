@@ -1,10 +1,10 @@
 <?php
-
 include_once 'includes/Mic.class.php';
 include_once 'includes/User.class.php';
 include_once 'includes/Database.class.php';
 include_once 'includes/Session.class.php';
 include_once 'includes/UserSession.class.php';
+include_once 'includes/WebAPI.class.php';
 
 global $__site_config;
 //global $__base_path;
@@ -14,6 +14,11 @@ $__site_config_path = dirname(is_link($_SERVER['DOCUMENT_ROOT']) ? readlink($_SE
 $__site_config = file_get_contents($__site_config_path);
 
 Session::start();
+//$wapi= new WebAPI();
+//$wapi->initiateSession();
+$wapi = new WebAPI();
+$wapi->initiateSession();
+
 
 function get_config($key, $default=null)
 {

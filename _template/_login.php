@@ -31,6 +31,7 @@ if ($result) {
         <div class="form-floating">
             <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
             <label for="floatingPassword">Password</label>
+            <input name="fingerprint" type="hidden" id="fingerprint" value="">
         </div>
 
         <div class="form-check text-start my-3">

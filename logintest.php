@@ -1,7 +1,7 @@
 <?php
 include 'libs/load.php';
 
-$user = "fooboo1";
+$user = "sibi";
 $pass = isset($_GET['pass']) ? $_GET['pass'] : '';
 $result = null;
 
@@ -21,10 +21,8 @@ if (Session::get('is_loggedin')) {
     $username = Session::get('session_username');
     $userobj = new User($username);
     print("Welcome Back ".$userobj->getFirstname());
-    print("<br>".$userobj->getBio());
     //print("<br>".$userobj->getBio());
     $userobj->setBio("Making new things...");
-    print("<br>".$userobj->getBio());
     $userobj->setModel("Human");
 //$userobj->thisIsNotAFunction();
 //print("<br>".$userobj->getBio());
